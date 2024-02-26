@@ -9,7 +9,6 @@ on:
       name:
         description: 'reason'
         required: false
-
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
@@ -21,15 +20,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
 
-      - name: Ensure tags are available
-        run: |
-          if [ -z "$(git tag -l)" ]; then
-            git tag v0.1.0  # Replace with your desired initial version
-            git push origin v0.1.0
-          fi
-     env:
-      GITHUB_TOKEN: ${{ secrets.YOUR_PERSONAL_ACCESS_TOKEN }}
-    
       - name: Save version info
         run: |
           git describe --tags > VERSION 
