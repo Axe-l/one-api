@@ -28,7 +28,7 @@ jobs:
             git push origin v0.1.0
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }}
+          GITHUB_TOKEN: ${{ secrets.YOUR_PERSONAL_ACCESS_TOKEN }}
 
       - name: Save version info
         run: |
