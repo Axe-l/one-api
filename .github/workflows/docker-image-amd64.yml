@@ -21,14 +21,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
 
-      - name: Ensure tags are available
-        run: |
-          if [ -z "$(git tag -l)" ]; then
-            git tag v0.1.0
-            git push origin v0.1.0
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
 
       - name: Save version info
         run: |
